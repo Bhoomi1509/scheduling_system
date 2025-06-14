@@ -6,12 +6,13 @@ import NotFound from './Components/NotFound';
 import PublicRoute from './routes/PublicRoute';
 import PrivateRoute from './routes/PrivateRoute';
 import RegisterPage from './Components/Register';
+import { isAuthenticated } from './utils/auth';
 
 function App() {
   const getToken = localStorage.getItem('token')
   return (
     <div className="min-h-screen bg-gray-50">
-      {getToken ?  <Navbar /> : null}
+      {isAuthenticated() ?  <Navbar /> : null}
       <main className="container mx-auto px-4 py-8">
         <Routes>
           <Route element={<PublicRoute restricted />}>
