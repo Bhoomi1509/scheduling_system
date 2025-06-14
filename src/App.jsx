@@ -15,7 +15,7 @@ function App() {
       <main className="container mx-auto px-4 py-8">
         <Routes>
           <Route element={<PublicRoute restricted />}>
-            <Route path="/register" element={<RegisterPage />} />
+            <Route path="/" element={<RegisterPage />} />
           </Route>
           <Route element={<PrivateRoute />}>
             <Route path="/dashboard" element={<AvailabilityManager />} />
